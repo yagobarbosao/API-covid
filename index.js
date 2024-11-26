@@ -93,11 +93,10 @@ const exibirGrafico = (dados) => {
   const canvas = document.getElementById('grafico-geral');
   const ctx = canvas.getContext('2d');
 
-  // Toggle visibility of the chart container
   canvasContainer.style.display = canvasContainer.style.display === 'none' ? 'block' : 'none';
 
   if (canvasContainer.style.display === 'none') {
-    // Destroy existing chart if container is hidden
+
     if (window.chartInstance) {
       window.chartInstance.destroy();
     }

@@ -10,7 +10,7 @@ const BACKUP_API = 'https://api.covid19api.com/summary';
 
 app.use(express.json());
 
-// Função para fazer retries
+
 const fetchWithRetry = async (url, retries = 3) => {
   while (retries > 0) {
     try {
@@ -24,7 +24,6 @@ const fetchWithRetry = async (url, retries = 3) => {
   }
 };
 
-// Rota para buscar dados por estado
 app.get('/dados/:estado', async (req, res) => {
   const estado = req.params.estado.toLowerCase();
 
@@ -50,7 +49,6 @@ app.get('/dados/:estado', async (req, res) => {
   }
 });
 
-// Rota para buscar dados gerais
 app.get('/dados-gerais', async (req, res) => {
   try {
     const data = await fetchWithRetry(PRIMARY_API);
